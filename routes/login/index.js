@@ -7,7 +7,10 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
   res.render('index', {
     title: '로그인',
-    tmpl,
+    tmpl: `
+      <h1>로그인</h1>
+      ${tmpl}
+    `,
   });
 });
 
