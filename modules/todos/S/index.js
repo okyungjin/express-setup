@@ -1,8 +1,7 @@
 import { strMap } from 'fxjs';
 
 export const tmpl = todos => `
-  <main>
-    <h1>TODO</h1>
+  <div>
     <form class="todo-form">
       <div class="input-field">
         <input
@@ -18,7 +17,7 @@ export const tmpl = todos => `
     <ul class="todo-list">
       ${strMap(todoTmpl, todos)}
     </ul>
-  </main>
+  </div>
 `;
 
 const todoTmpl = todo => `

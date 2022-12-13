@@ -3200,25 +3200,36 @@ eval("// TODO(Babel 8): Remove this file.\n\nvar runtime = __webpack_require__(/
 
 /***/ }),
 
-/***/ "./modules/main/F/index.js":
-/*!*********************************!*\
-  !*** ./modules/main/F/index.js ***!
-  \*********************************/
+/***/ "./client/index.js":
+/*!*************************!*\
+  !*** ./client/index.js ***!
+  \*************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"events\": () => (/* binding */ events)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/pipe.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/each.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/delegate.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/closest.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/children.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/toggleClass.js\");\n\n\n\nconst events = (0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('click', '.button--edit', ({ currentTarget }) => {\n    (0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n      currentTarget,\n      (0,fxdom__WEBPACK_IMPORTED_MODULE_3__[\"default\"])('.todo-list__item'),\n      fxdom__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n      (0,fxjs__WEBPACK_IMPORTED_MODULE_5__[\"default\"])((0,fxdom__WEBPACK_IMPORTED_MODULE_6__[\"default\"])('hidden'))\n    );\n  }),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('click', '.button--save', () => {\n    console.log('save clicked!');\n  }),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('keyup', '.input--todo', (e) => {\n    if (e.key === 'Enter') console.log('todo enter~!');\n  }),\n);\n\n\n//# sourceURL=webpack://express-setup-by-generator/./modules/main/F/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/tap.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/el.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/appendTo.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/qs.js\");\n/* harmony import */ var _modules_todos_S_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/todos/S/index.js */ \"./modules/todos/S/index.js\");\n/* harmony import */ var _modules_todos_F_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/todos/F/index.js */ \"./modules/todos/F/index.js\");\n\n\n\n\n\n(0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _modules_todos_S_index_js__WEBPACK_IMPORTED_MODULE_0__.tmpl,\n  fxdom__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  (0,fxjs__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(console.log),\n  _modules_todos_F_index_js__WEBPACK_IMPORTED_MODULE_1__.events,\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_5__[\"default\"])((0,fxdom__WEBPACK_IMPORTED_MODULE_6__[\"default\"])('body'))\n);\n\n\n//# sourceURL=webpack://express-setup-by-generator/./client/index.js?");
 
 /***/ }),
 
-/***/ "./modules/main/S/index.js":
-/*!*********************************!*\
-  !*** ./modules/main/S/index.js ***!
-  \*********************************/
+/***/ "./modules/todos/F/index.js":
+/*!**********************************!*\
+  !*** ./modules/todos/F/index.js ***!
+  \**********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"tmpl\": () => (/* binding */ tmpl)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/strMap.js\");\n\n\nconst tmpl = todos => `\n  <main>\n    <h1>TODO</h1>\n    <form class=\"todo-form\">\n      <div class=\"input-field\">\n        <input\n          type=\"text\"\n          id=\"input--add\"\n          placeholder=\"Enter todo\"\n          autocomplete=\"off\"\n        />\n        <label for=\"input--add\"></label>\n      </div>\n      <input type=\"submit\" class=\"button--add\" value=\"Add\" />\n    </form>\n    <ul class=\"todo-list\">\n      ${(0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(todoTmpl, todos)}\n    </ul>\n  </main>\n`;\n\nconst todoTmpl = todo => `\n  <li class=\"todo-list__item ${todo.is_completed ? 'completed' : ''}\" data-todo-id=${todo.todo_id}\">\n    <input type=\"checkbox\" id=\"todo${todo.todo_id}\" class=\"todo__completed\" ${todo.is_completed ? 'checked' : '' }/>\n    <label for=\"todo${todo.todo_id}\" class=\"todo__title\">${todo.title}</label>\n    <input class=\"input--todo hidden\" type=\"text\" value=\"${todo.title}\">\n    <button class=\"button--todo button--edit\">Edit</button>\n    <button class=\"button--todo button--save hidden\">Save</button>\n    <button class=\"button--todo button--delete\">Delete</button>\n  </li>`;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./modules/main/S/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"events\": () => (/* binding */ events)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/pipe.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/each.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/delegate.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/closest.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/children.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/toggleClass.js\");\n\n\n\nconst events = (0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('click', '.button--edit', ({ currentTarget }) => {\n    (0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n      currentTarget,\n      (0,fxdom__WEBPACK_IMPORTED_MODULE_3__[\"default\"])('.todo-list__item'),\n      fxdom__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n      (0,fxjs__WEBPACK_IMPORTED_MODULE_5__[\"default\"])((0,fxdom__WEBPACK_IMPORTED_MODULE_6__[\"default\"])('hidden'))\n    );\n  }),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('click', '.button--save', () => {\n    console.log('save clicked!');\n  }),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('keyup', '.input--todo', (e) => {\n    if (e.key === 'Enter') console.log('todo enter~!');\n  }),\n);\n\n\n//# sourceURL=webpack://express-setup-by-generator/./modules/todos/F/index.js?");
+
+/***/ }),
+
+/***/ "./modules/todos/S/index.js":
+/*!**********************************!*\
+  !*** ./modules/todos/S/index.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"tmpl\": () => (/* binding */ tmpl)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/strMap.js\");\n\n\nconst tmpl = todos => `\n  <div>\n    <form class=\"todo-form\">\n      <div class=\"input-field\">\n        <input\n          type=\"text\"\n          id=\"input--add\"\n          placeholder=\"Enter todo\"\n          autocomplete=\"off\"\n        />\n        <label for=\"input--add\"></label>\n      </div>\n      <input type=\"submit\" class=\"button--add\" value=\"Add\" />\n    </form>\n    <ul class=\"todo-list\">\n      ${(0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(todoTmpl, todos)}\n    </ul>\n  </div>\n`;\n\nconst todoTmpl = todo => `\n  <li class=\"todo-list__item ${todo.is_completed ? 'completed' : ''}\" data-todo-id=${todo.todo_id}\">\n    <input type=\"checkbox\" id=\"todo${todo.todo_id}\" class=\"todo__completed\" ${todo.is_completed ? 'checked' : '' }/>\n    <label for=\"todo${todo.todo_id}\" class=\"todo__title\">${todo.title}</label>\n    <input class=\"input--todo hidden\" type=\"text\" value=\"${todo.title}\">\n    <button class=\"button--todo button--edit\">Edit</button>\n    <button class=\"button--todo button--save hidden\">Save</button>\n    <button class=\"button--todo button--delete\">Delete</button>\n  </li>`;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./modules/todos/S/index.js?");
 
 /***/ }),
 
@@ -3759,17 +3770,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ go2)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/promise */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js\");\n/* harmony import */ var _Strict_nop_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Strict/nop.js */ \"./node_modules/fxjs/mjs/Strict/nop.js\");\n\n\nfunction go2(acc, a, f) {\n  return a instanceof _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_0__ ? a.then(function (a) {\n    return f(acc, a);\n  }, function (e) {\n    return e == _Strict_nop_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"] ? acc : _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_0__.reject(e);\n  }) : f(acc, a);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/_internal/go2.js?");
 
-/***/ }),
-
-/***/ "./public/index.js":
-/*!*************************!*\
-  !*** ./public/index.js ***!
-  \*************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/tap.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/el.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/appendTo.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/qs.js\");\n/* harmony import */ var _modules_main_S_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/main/S/index.js */ \"./modules/main/S/index.js\");\n/* harmony import */ var _modules_main_F_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/main/F/index.js */ \"./modules/main/F/index.js\");\n\n\n\n\n\n(0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _modules_main_S_index_js__WEBPACK_IMPORTED_MODULE_0__.tmpl,\n  fxdom__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  (0,fxjs__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(_modules_main_F_index_js__WEBPACK_IMPORTED_MODULE_1__.events),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_5__[\"default\"])((0,fxdom__WEBPACK_IMPORTED_MODULE_6__[\"default\"])('body'))\n);\n\n\n//# sourceURL=webpack://express-setup-by-generator/./public/index.js?");
-
 /***/ })
 
 /******/ 	});
@@ -3844,7 +3844,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fxjs
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./public/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./client/index.js");
 /******/ 	
 /******/ })()
 ;
