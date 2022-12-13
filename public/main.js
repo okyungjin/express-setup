@@ -189,6 +189,16 @@ eval("__webpack_require__(/*! ../../../modules/es.array.for-each */ \"./node_mod
 
 /***/ }),
 
+/***/ "./node_modules/core-js-pure/es/array/virtual/keys.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js-pure/es/array/virtual/keys.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("__webpack_require__(/*! ../../../modules/es.array.iterator */ \"./node_modules/core-js-pure/modules/es.array.iterator.js\");\n__webpack_require__(/*! ../../../modules/es.object.to-string */ \"./node_modules/core-js-pure/modules/es.object.to-string.js\");\nvar entryVirtual = __webpack_require__(/*! ../../../internals/entry-virtual */ \"./node_modules/core-js-pure/internals/entry-virtual.js\");\n\nmodule.exports = entryVirtual('Array').keys;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/es/array/virtual/keys.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js-pure/es/array/virtual/reverse.js":
 /*!***************************************************************!*\
   !*** ./node_modules/core-js-pure/es/array/virtual/reverse.js ***!
@@ -259,6 +269,16 @@ eval("var isPrototypeOf = __webpack_require__(/*! ../../internals/object-is-prot
 
 /***/ }),
 
+/***/ "./node_modules/core-js-pure/es/instance/trim.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js-pure/es/instance/trim.js ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var isPrototypeOf = __webpack_require__(/*! ../../internals/object-is-prototype-of */ \"./node_modules/core-js-pure/internals/object-is-prototype-of.js\");\nvar method = __webpack_require__(/*! ../string/virtual/trim */ \"./node_modules/core-js-pure/es/string/virtual/trim.js\");\n\nvar StringPrototype = String.prototype;\n\nmodule.exports = function (it) {\n  var own = it.trim;\n  return typeof it == 'string' || it === StringPrototype\n    || (isPrototypeOf(StringPrototype, it) && own === StringPrototype.trim) ? method : own;\n};\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/es/instance/trim.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js-pure/es/object/create.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js-pure/es/object/create.js ***!
@@ -306,6 +326,16 @@ eval("__webpack_require__(/*! ../../modules/es.object.set-prototype-of */ \"./no
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("__webpack_require__(/*! ../../modules/es.aggregate-error */ \"./node_modules/core-js-pure/modules/es.aggregate-error.js\");\n__webpack_require__(/*! ../../modules/es.array.iterator */ \"./node_modules/core-js-pure/modules/es.array.iterator.js\");\n__webpack_require__(/*! ../../modules/es.object.to-string */ \"./node_modules/core-js-pure/modules/es.object.to-string.js\");\n__webpack_require__(/*! ../../modules/es.promise */ \"./node_modules/core-js-pure/modules/es.promise.js\");\n__webpack_require__(/*! ../../modules/es.promise.all-settled */ \"./node_modules/core-js-pure/modules/es.promise.all-settled.js\");\n__webpack_require__(/*! ../../modules/es.promise.any */ \"./node_modules/core-js-pure/modules/es.promise.any.js\");\n__webpack_require__(/*! ../../modules/es.promise.finally */ \"./node_modules/core-js-pure/modules/es.promise.finally.js\");\n__webpack_require__(/*! ../../modules/es.string.iterator */ \"./node_modules/core-js-pure/modules/es.string.iterator.js\");\nvar path = __webpack_require__(/*! ../../internals/path */ \"./node_modules/core-js-pure/internals/path.js\");\n\nmodule.exports = path.Promise;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/es/promise/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js-pure/es/string/virtual/trim.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js-pure/es/string/virtual/trim.js ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("__webpack_require__(/*! ../../../modules/es.string.trim */ \"./node_modules/core-js-pure/modules/es.string.trim.js\");\nvar entryVirtual = __webpack_require__(/*! ../../../internals/entry-virtual */ \"./node_modules/core-js-pure/internals/entry-virtual.js\");\n\nmodule.exports = entryVirtual('String').trim;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/es/string/virtual/trim.js?");
 
 /***/ }),
 
@@ -1821,6 +1851,26 @@ eval("var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-th
 
 /***/ }),
 
+/***/ "./node_modules/core-js-pure/internals/string-trim-forced.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js-pure/internals/string-trim-forced.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var PROPER_FUNCTION_NAME = (__webpack_require__(/*! ../internals/function-name */ \"./node_modules/core-js-pure/internals/function-name.js\").PROPER);\nvar fails = __webpack_require__(/*! ../internals/fails */ \"./node_modules/core-js-pure/internals/fails.js\");\nvar whitespaces = __webpack_require__(/*! ../internals/whitespaces */ \"./node_modules/core-js-pure/internals/whitespaces.js\");\n\nvar non = '\\u200B\\u0085\\u180E';\n\n// check that a method works with the correct list\n// of whitespaces and has a correct name\nmodule.exports = function (METHOD_NAME) {\n  return fails(function () {\n    return !!whitespaces[METHOD_NAME]()\n      || non[METHOD_NAME]() !== non\n      || (PROPER_FUNCTION_NAME && whitespaces[METHOD_NAME].name !== METHOD_NAME);\n  });\n};\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/internals/string-trim-forced.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js-pure/internals/string-trim.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js-pure/internals/string-trim.js ***!
+  \************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ \"./node_modules/core-js-pure/internals/function-uncurry-this.js\");\nvar requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ \"./node_modules/core-js-pure/internals/require-object-coercible.js\");\nvar toString = __webpack_require__(/*! ../internals/to-string */ \"./node_modules/core-js-pure/internals/to-string.js\");\nvar whitespaces = __webpack_require__(/*! ../internals/whitespaces */ \"./node_modules/core-js-pure/internals/whitespaces.js\");\n\nvar replace = uncurryThis(''.replace);\nvar whitespace = '[' + whitespaces + ']';\nvar ltrim = RegExp('^' + whitespace + whitespace + '*');\nvar rtrim = RegExp(whitespace + whitespace + '*$');\n\n// `String.prototype.{ trim, trimStart, trimEnd, trimLeft, trimRight }` methods implementation\nvar createMethod = function (TYPE) {\n  return function ($this) {\n    var string = toString(requireObjectCoercible($this));\n    if (TYPE & 1) string = replace(string, ltrim, '');\n    if (TYPE & 2) string = replace(string, rtrim, '');\n    return string;\n  };\n};\n\nmodule.exports = {\n  // `String.prototype.{ trimLeft, trimStart }` methods\n  // https://tc39.es/ecma262/#sec-string.prototype.trimstart\n  start: createMethod(1),\n  // `String.prototype.{ trimRight, trimEnd }` methods\n  // https://tc39.es/ecma262/#sec-string.prototype.trimend\n  end: createMethod(2),\n  // `String.prototype.trim` method\n  // https://tc39.es/ecma262/#sec-string.prototype.trim\n  trim: createMethod(3)\n};\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/internals/string-trim.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js-pure/internals/symbol-constructor-detection.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/core-js-pure/internals/symbol-constructor-detection.js ***!
@@ -2038,6 +2088,16 @@ eval("var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symb
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("var global = __webpack_require__(/*! ../internals/global */ \"./node_modules/core-js-pure/internals/global.js\");\nvar shared = __webpack_require__(/*! ../internals/shared */ \"./node_modules/core-js-pure/internals/shared.js\");\nvar hasOwn = __webpack_require__(/*! ../internals/has-own-property */ \"./node_modules/core-js-pure/internals/has-own-property.js\");\nvar uid = __webpack_require__(/*! ../internals/uid */ \"./node_modules/core-js-pure/internals/uid.js\");\nvar NATIVE_SYMBOL = __webpack_require__(/*! ../internals/symbol-constructor-detection */ \"./node_modules/core-js-pure/internals/symbol-constructor-detection.js\");\nvar USE_SYMBOL_AS_UID = __webpack_require__(/*! ../internals/use-symbol-as-uid */ \"./node_modules/core-js-pure/internals/use-symbol-as-uid.js\");\n\nvar WellKnownSymbolsStore = shared('wks');\nvar Symbol = global.Symbol;\nvar symbolFor = Symbol && Symbol['for'];\nvar createWellKnownSymbol = USE_SYMBOL_AS_UID ? Symbol : Symbol && Symbol.withoutSetter || uid;\n\nmodule.exports = function (name) {\n  if (!hasOwn(WellKnownSymbolsStore, name) || !(NATIVE_SYMBOL || typeof WellKnownSymbolsStore[name] == 'string')) {\n    var description = 'Symbol.' + name;\n    if (NATIVE_SYMBOL && hasOwn(Symbol, name)) {\n      WellKnownSymbolsStore[name] = Symbol[name];\n    } else if (USE_SYMBOL_AS_UID && symbolFor) {\n      WellKnownSymbolsStore[name] = symbolFor(description);\n    } else {\n      WellKnownSymbolsStore[name] = createWellKnownSymbol(description);\n    }\n  } return WellKnownSymbolsStore[name];\n};\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/internals/well-known-symbol.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js-pure/internals/whitespaces.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js-pure/internals/whitespaces.js ***!
+  \************************************************************/
+/***/ ((module) => {
+
+eval("// a string of all valid unicode whitespaces\nmodule.exports = '\\u0009\\u000A\\u000B\\u000C\\u000D\\u0020\\u00A0\\u1680\\u2000\\u2001\\u2002' +\n  '\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u202F\\u205F\\u3000\\u2028\\u2029\\uFEFF';\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/internals/whitespaces.js?");
 
 /***/ }),
 
@@ -2354,6 +2414,17 @@ eval("// empty\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_mo
 
 "use strict";
 eval("\nvar charAt = (__webpack_require__(/*! ../internals/string-multibyte */ \"./node_modules/core-js-pure/internals/string-multibyte.js\").charAt);\nvar toString = __webpack_require__(/*! ../internals/to-string */ \"./node_modules/core-js-pure/internals/to-string.js\");\nvar InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ \"./node_modules/core-js-pure/internals/internal-state.js\");\nvar defineIterator = __webpack_require__(/*! ../internals/iterator-define */ \"./node_modules/core-js-pure/internals/iterator-define.js\");\nvar createIterResultObject = __webpack_require__(/*! ../internals/create-iter-result-object */ \"./node_modules/core-js-pure/internals/create-iter-result-object.js\");\n\nvar STRING_ITERATOR = 'String Iterator';\nvar setInternalState = InternalStateModule.set;\nvar getInternalState = InternalStateModule.getterFor(STRING_ITERATOR);\n\n// `String.prototype[@@iterator]` method\n// https://tc39.es/ecma262/#sec-string.prototype-@@iterator\ndefineIterator(String, 'String', function (iterated) {\n  setInternalState(this, {\n    type: STRING_ITERATOR,\n    string: toString(iterated),\n    index: 0\n  });\n// `%StringIteratorPrototype%.next` method\n// https://tc39.es/ecma262/#sec-%stringiteratorprototype%.next\n}, function next() {\n  var state = getInternalState(this);\n  var string = state.string;\n  var index = state.index;\n  var point;\n  if (index >= string.length) return createIterResultObject(undefined, true);\n  point = charAt(string, index);\n  state.index += point.length;\n  return createIterResultObject(point, false);\n});\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/modules/es.string.iterator.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js-pure/modules/es.string.trim.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js-pure/modules/es.string.trim.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("\nvar $ = __webpack_require__(/*! ../internals/export */ \"./node_modules/core-js-pure/internals/export.js\");\nvar $trim = (__webpack_require__(/*! ../internals/string-trim */ \"./node_modules/core-js-pure/internals/string-trim.js\").trim);\nvar forcedStringTrimMethod = __webpack_require__(/*! ../internals/string-trim-forced */ \"./node_modules/core-js-pure/internals/string-trim-forced.js\");\n\n// `String.prototype.trim` method\n// https://tc39.es/ecma262/#sec-string.prototype.trim\n$({ target: 'String', proto: true, forced: forcedStringTrimMethod('trim') }, {\n  trim: function trim() {\n    return $trim(this);\n  }\n});\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/modules/es.string.trim.js?");
 
 /***/ }),
 
@@ -2699,6 +2770,16 @@ eval("var parent = __webpack_require__(/*! ../../../es/array/virtual/for-each */
 
 /***/ }),
 
+/***/ "./node_modules/core-js-pure/stable/array/virtual/keys.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js-pure/stable/array/virtual/keys.js ***!
+  \****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var parent = __webpack_require__(/*! ../../../es/array/virtual/keys */ \"./node_modules/core-js-pure/es/array/virtual/keys.js\");\n\nmodule.exports = parent;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/stable/array/virtual/keys.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js-pure/stable/get-iterator-method.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/core-js-pure/stable/get-iterator-method.js ***!
@@ -2739,6 +2820,16 @@ eval("__webpack_require__(/*! ../../modules/web.dom-collections.iterator */ \"./
 
 /***/ }),
 
+/***/ "./node_modules/core-js-pure/stable/instance/keys.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js-pure/stable/instance/keys.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("__webpack_require__(/*! ../../modules/web.dom-collections.iterator */ \"./node_modules/core-js-pure/modules/web.dom-collections.iterator.js\");\nvar classof = __webpack_require__(/*! ../../internals/classof */ \"./node_modules/core-js-pure/internals/classof.js\");\nvar hasOwn = __webpack_require__(/*! ../../internals/has-own-property */ \"./node_modules/core-js-pure/internals/has-own-property.js\");\nvar isPrototypeOf = __webpack_require__(/*! ../../internals/object-is-prototype-of */ \"./node_modules/core-js-pure/internals/object-is-prototype-of.js\");\nvar method = __webpack_require__(/*! ../array/virtual/keys */ \"./node_modules/core-js-pure/stable/array/virtual/keys.js\");\n\nvar ArrayPrototype = Array.prototype;\n\nvar DOMIterables = {\n  DOMTokenList: true,\n  NodeList: true\n};\n\nmodule.exports = function (it) {\n  var own = it.keys;\n  return it === ArrayPrototype || (isPrototypeOf(ArrayPrototype, it) && own === ArrayPrototype.keys)\n    || hasOwn(DOMIterables, classof(it)) ? method : own;\n};\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/stable/instance/keys.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js-pure/stable/instance/reverse.js":
 /*!**************************************************************!*\
   !*** ./node_modules/core-js-pure/stable/instance/reverse.js ***!
@@ -2756,6 +2847,16 @@ eval("var parent = __webpack_require__(/*! ../../es/instance/reverse */ \"./node
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("var parent = __webpack_require__(/*! ../../es/instance/slice */ \"./node_modules/core-js-pure/es/instance/slice.js\");\n\nmodule.exports = parent;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/stable/instance/slice.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js-pure/stable/instance/trim.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js-pure/stable/instance/trim.js ***!
+  \***********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var parent = __webpack_require__(/*! ../../es/instance/trim */ \"./node_modules/core-js-pure/es/instance/trim.js\");\n\nmodule.exports = parent;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/core-js-pure/stable/instance/trim.js?");
 
 /***/ }),
 
@@ -2839,6 +2940,26 @@ eval("var parent = __webpack_require__(/*! ../../es/symbol/iterator */ \"./node_
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js ***!
+  \**************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! core-js-pure/stable/array/from */ \"./node_modules/core-js-pure/stable/array/from.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js ***!
+  \******************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! core-js-pure/stable/array/is-array */ \"./node_modules/core-js-pure/stable/array/is-array.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js ***!
@@ -2849,6 +2970,36 @@ eval("module.exports = __webpack_require__(/*! core-js-pure/stable/instance/conc
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js ***!
+  \*****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! core-js-pure/stable/instance/keys */ \"./node_modules/core-js-pure/stable/instance/keys.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js ***!
+  \******************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! core-js-pure/stable/instance/slice */ \"./node_modules/core-js-pure/stable/instance/slice.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js ***!
+  \*****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! core-js-pure/stable/instance/trim */ \"./node_modules/core-js-pure/stable/instance/trim.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js ***!
@@ -2856,6 +3007,16 @@ eval("module.exports = __webpack_require__(/*! core-js-pure/stable/instance/conc
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__(/*! core-js-pure/stable/promise */ \"./node_modules/core-js-pure/stable/promise/index.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js ***!
+  \**********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__(/*! core-js-pure/stable/symbol */ \"./node_modules/core-js-pure/stable/symbol/index.js\");\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js?");
 
 /***/ }),
 
@@ -3039,6 +3200,28 @@ eval("// TODO(Babel 8): Remove this file.\n\nvar runtime = __webpack_require__(/
 
 /***/ }),
 
+/***/ "./modules/main/F/index.js":
+/*!*********************************!*\
+  !*** ./modules/main/F/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"events\": () => (/* binding */ events)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/pipe.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/each.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/delegate.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/closest.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/children.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/toggleClass.js\");\n\n\n\nconst events = (0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('click', '.button--edit', ({ currentTarget }) => {\n    (0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n      currentTarget,\n      (0,fxdom__WEBPACK_IMPORTED_MODULE_3__[\"default\"])('.todo-list__item'),\n      fxdom__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n      (0,fxjs__WEBPACK_IMPORTED_MODULE_5__[\"default\"])((0,fxdom__WEBPACK_IMPORTED_MODULE_6__[\"default\"])('hidden'))\n    );\n  }),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('click', '.button--save', () => {\n    console.log('save clicked!');\n  }),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('keyup', '.input--todo', (e) => {\n    if (e.key === 'Enter') console.log('todo enter~!');\n  }),\n);\n\n\n//# sourceURL=webpack://express-setup-by-generator/./modules/main/F/index.js?");
+
+/***/ }),
+
+/***/ "./modules/main/S/index.js":
+/*!*********************************!*\
+  !*** ./modules/main/S/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"tmpl\": () => (/* binding */ tmpl)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/strMap.js\");\n\n\nconst tmpl = todos => `\n  <main>\n    <h1>TODO</h1>\n    <form class=\"todo-form\">\n      <div class=\"input-field\">\n        <input\n          type=\"text\"\n          id=\"input--add\"\n          placeholder=\"Enter todo\"\n          autocomplete=\"off\"\n        />\n        <label for=\"input--add\"></label>\n      </div>\n      <input type=\"submit\" class=\"button--add\" value=\"Add\" />\n    </form>\n    <ul class=\"todo-list\">\n      ${(0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(todoTmpl, todos)}\n    </ul>\n  </main>\n`;\n\nconst todoTmpl = todo => `\n  <li class=\"todo-list__item ${todo.is_completed ? 'completed' : ''}\" data-todo-id=${todo.todo_id}\">\n    <input type=\"checkbox\" id=\"todo${todo.todo_id}\" class=\"todo__completed\" ${todo.is_completed ? 'checked' : '' }/>\n    <label for=\"todo${todo.todo_id}\" class=\"todo__title\">${todo.title}</label>\n    <input class=\"input--todo hidden\" type=\"text\" value=\"${todo.title}\">\n    <button class=\"button--todo button--edit\">Edit</button>\n    <button class=\"button--todo button--save hidden\">Save</button>\n    <button class=\"button--todo button--delete\">Delete</button>\n  </li>`;\n\n\n//# sourceURL=webpack://express-setup-by-generator/./modules/main/S/index.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js ***!
@@ -3058,6 +3241,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _arrayWithHoles)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/array/is-array */ \"./node_modules/@babel/runtime-corejs3/core-js/array/is-array.js\");\n\nfunction _arrayWithHoles(arr) {\n  if (_babel_runtime_corejs3_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__(arr)) return arr;\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithHoles.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _arrayWithoutHoles)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/array/is-array */ \"./node_modules/@babel/runtime-corejs3/core-js/array/is-array.js\");\n/* harmony import */ var _arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./arrayLikeToArray.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js\");\n\n\nfunction _arrayWithoutHoles(arr) {\n  if (_babel_runtime_corejs3_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__(arr)) return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(arr);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _iterableToArray)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/symbol */ \"./node_modules/@babel/runtime-corejs3/core-js/symbol.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/get-iterator-method */ \"./node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_array_from__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/array/from */ \"./node_modules/@babel/runtime-corejs3/core-js/array/from.js\");\n\n\n\nfunction _iterableToArray(iter) {\n  if (typeof _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__ !== \"undefined\" && _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_1__(iter) != null || iter[\"@@iterator\"] != null) return _babel_runtime_corejs3_core_js_array_from__WEBPACK_IMPORTED_MODULE_2__(iter);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js?");
 
 /***/ }),
 
@@ -3083,6 +3288,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _nonIterableSpread)\n/* harmony export */ });\nfunction _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js ***!
@@ -3091,6 +3307,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _slicedToArray)\n/* harmony export */ });\n/* harmony import */ var _arrayWithHoles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithHoles.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithHoles.js\");\n/* harmony import */ var _iterableToArrayLimit_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArrayLimit.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArrayLimit.js\");\n/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/unsupportedIterableToArray.js\");\n/* harmony import */ var _nonIterableRest_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableRest.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableRest.js\");\n\n\n\n\nfunction _slicedToArray(arr, i) {\n  return (0,_arrayWithHoles_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(arr) || (0,_iterableToArrayLimit_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(arr, i) || (0,_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(arr, i) || (0,_nonIterableRest_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _toConsumableArray)\n/* harmony export */ });\n/* harmony import */ var _arrayWithoutHoles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js\");\n/* harmony import */ var _iterableToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js\");\n/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/unsupportedIterableToArray.js\");\n/* harmony import */ var _nonIterableSpread_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableSpread.js */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js\");\n\n\n\n\nfunction _toConsumableArray(arr) {\n  return (0,_arrayWithoutHoles_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(arr) || (0,_iterableToArray_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(arr) || (0,_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(arr) || (0,_nonIterableSpread_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ _typeof)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/symbol */ \"./node_modules/@babel/runtime-corejs3/core-js/symbol.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_symbol_iterator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/symbol/iterator */ \"./node_modules/@babel/runtime-corejs3/core-js/symbol/iterator.js\");\n\n\nfunction _typeof(obj) {\n  \"@babel/helpers - typeof\";\n\n  return _typeof = \"function\" == typeof _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__ && \"symbol\" == typeof _babel_runtime_corejs3_core_js_symbol_iterator__WEBPACK_IMPORTED_MODULE_1__ ? function (obj) {\n    return typeof obj;\n  } : function (obj) {\n    return obj && \"function\" == typeof _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__ && obj.constructor === _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__ && obj !== _babel_runtime_corejs3_core_js_symbol__WEBPACK_IMPORTED_MODULE_0__.prototype ? \"symbol\" : typeof obj;\n  }, _typeof(obj);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js?");
 
 /***/ }),
 
@@ -3105,6 +3343,160 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/fxdom/_internal/_baseFind.js":
+/*!***************************************************!*\
+  !*** ./node_modules/fxdom/_internal/_baseFind.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n\nvar idCreator = function idCreator(_) {\n  var i = 0;\n  return function (_) {\n    return \"fxdom-id-\" + i++;\n  };\n};\n\nvar createId = idCreator();\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (qs) {\n  return (0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function (sel, el) {\n    var id = el.id;\n    el.id = id || createId();\n    var res = el[qs](\"#\" + el.id + (sel[0] == \"&\" ? sel.substr(1) : \" \" + sel));\n    if (!id) el.removeAttribute(\"id\");\n    return res;\n  });\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/_internal/_baseFind.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/_internal/_methodClass.js":
+/*!******************************************************!*\
+  !*** ./node_modules/fxdom/_internal/_methodClass.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/each.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (method) {\n  return (0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function (class_names, el) {\n    return (0,fxjs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(function (cn) {\n      return el.classList[method](cn);\n    }, class_names.split(\" \")), el;\n  });\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/_internal/_methodClass.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/appendTo.js":
+/*!****************************************!*\
+  !*** ./node_modules/fxdom/appendTo.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function (parent, child) {\n  return parent.appendChild(child);\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/appendTo.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/children.js":
+/*!****************************************!*\
+  !*** ./node_modules/fxdom/children.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (el) {\n  return el.children;\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/children.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/closest.js":
+/*!***************************************!*\
+  !*** ./node_modules/fxdom/closest.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function (sel, el) {\n  return el.closest(sel);\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/closest.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/contains.js":
+/*!****************************************!*\
+  !*** ./node_modules/fxdom/contains.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function (child, parent) {\n  return parent.contains(child);\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/contains.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/delegate.js":
+/*!****************************************!*\
+  !*** ./node_modules/fxdom/delegate.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/tap.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/each.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/defaults.js\");\n/* harmony import */ var fxjs_Lazy_filterL_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxjs/Lazy/filterL.js */ \"./node_modules/fxjs/mjs/Lazy/filterL.js\");\n/* harmony import */ var _contains_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contains.js */ \"./node_modules/fxdom/contains.js\");\n/* harmony import */ var _findAll_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./findAll.js */ \"./node_modules/fxdom/findAll.js\");\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (event, sel, f) {\n  return (0,fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function (el) {\n    return el.addEventListener(event, function (e) {\n      return (0,fxjs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(el, (0,_findAll_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(sel), (0,fxjs_Lazy_filterL_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])((0,_contains_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(e.target)), (0,fxjs__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(function (currentTarget) {\n        return f((0,fxjs__WEBPACK_IMPORTED_MODULE_6__[\"default\"])({\n          originalEvent: e,\n          currentTarget: currentTarget,\n          delegateTarget: el\n        }, e));\n      }));\n    });\n  });\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/delegate.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/each.js":
+/*!************************************!*\
+  !*** ./node_modules/fxdom/each.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/helpers/toConsumableArray */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/each.js\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,fxjs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(function _each(func, els) {\n  return (0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(func, (0,_babel_runtime_corejs3_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(els));\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/each.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/el.js":
+/*!**********************************!*\
+  !*** ./node_modules/fxdom/el.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_trim__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/trim */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/head.js\");\n/* harmony import */ var _els_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./els.js */ \"./node_modules/fxdom/els.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (html) {\n  html = _babel_runtime_corejs3_core_js_stable_instance_trim__WEBPACK_IMPORTED_MODULE_0__(html).call(html);\n  return html[0] == \"<\" ? (0,fxjs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_els_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(html)) : document.createElement(html);\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/el.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/els.js":
+/*!***********************************!*\
+  !*** ./node_modules/fxdom/els.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_trim__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/trim */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js\");\n/* harmony import */ var _remove_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./remove.js */ \"./node_modules/fxdom/remove.js\");\n/* harmony import */ var _each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./each.js */ \"./node_modules/fxdom/each.js\");\n\n\n\nvar fragmentRE = /^\\s*<(\\w+|!)[^>]*>/,\n    table = document.createElement(\"table\"),\n    tableRow = document.createElement(\"tr\"),\n    div = document.createElement(\"div\"),\n    containers = {\n  tr: document.createElement(\"tbody\"),\n  tbody: table,\n  thead: table,\n  tfoot: table,\n  td: tableRow,\n  th: tableRow\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (html) {\n  html = _babel_runtime_corejs3_core_js_stable_instance_trim__WEBPACK_IMPORTED_MODULE_0__(html).call(html);\n  var name = fragmentRE.test(html) && RegExp.$1;\n  var container = containers[name] || div;\n  container.innerHTML = html;\n  return (0,_each_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_remove_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], container.childNodes);\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/els.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/findAll.js":
+/*!***************************************!*\
+  !*** ./node_modules/fxdom/findAll.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _internal_baseFind_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_internal/_baseFind.js */ \"./node_modules/fxdom/_internal/_baseFind.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_internal_baseFind_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\"querySelectorAll\"));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/findAll.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/qs.js":
+/*!**********************************!*\
+  !*** ./node_modules/fxdom/qs.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (sel) {\n  var base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;\n  return base.querySelector(sel);\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/qs.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/remove.js":
+/*!**************************************!*\
+  !*** ./node_modules/fxdom/remove.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (el) {\n  return el.parentNode.removeChild(el);\n});\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/remove.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxdom/toggleClass.js":
+/*!*******************************************!*\
+  !*** ./node_modules/fxdom/toggleClass.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _internal_methodClass_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_internal/_methodClass.js */ \"./node_modules/fxdom/_internal/_methodClass.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_internal_methodClass_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\"toggle\"));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxdom/toggleClass.js?");
+
+/***/ }),
+
 /***/ "./node_modules/fxjs/mjs/Lazy/emptyL.js":
 /*!**********************************************!*\
   !*** ./node_modules/fxjs/mjs/Lazy/emptyL.js ***!
@@ -3116,6 +3508,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/fxjs/mjs/Lazy/entriesL.js":
+/*!************************************************!*\
+  !*** ./node_modules/fxjs/mjs/Lazy/entriesL.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ entriesL)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/keys */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js\");\n/* harmony import */ var _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/regenerator */ \"./node_modules/@babel/runtime-corejs3/regenerator/index.js\");\n\n\n\nvar _marked = /*#__PURE__*/_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_1__.mark(entriesL);\n\nfunction entriesL(obj) {\n  var k;\n  return _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_1__.wrap(function entriesL$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          _context.t0 = _babel_runtime_corejs3_core_js_stable_instance_keys__WEBPACK_IMPORTED_MODULE_0__(_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_1__).call(_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_1__, obj);\n\n        case 1:\n          if ((_context.t1 = _context.t0()).done) {\n            _context.next = 7;\n            break;\n          }\n\n          k = _context.t1.value;\n          _context.next = 5;\n          return [k, obj[k]];\n\n        case 5:\n          _context.next = 1;\n          break;\n\n        case 7:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, _marked);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Lazy/entriesL.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Lazy/filterL.js":
+/*!***********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Lazy/filterL.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/regenerator */ \"./node_modules/@babel/runtime-corejs3/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/promise */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_slice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/slice */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_array_from__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/array/from */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/symbol */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/get-iterator-method */ \"./node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_array_is_array__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/array/is-array */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js\");\n/* harmony import */ var _Strict_curry_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Strict/curry.js */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n/* harmony import */ var _Strict_go1_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Strict/go1.js */ \"./node_modules/fxjs/mjs/Strict/go1.js\");\n/* harmony import */ var _Strict_nop_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../Strict/nop.js */ \"./node_modules/fxjs/mjs/Strict/nop.js\");\n/* harmony import */ var _Strict_toIter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Strict/toIter.js */ \"./node_modules/fxjs/mjs/Strict/toIter.js\");\n\n\n\n\n\n\n\n\nfunction _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4__ !== \"undefined\" && _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_5__(o) || o[\"@@iterator\"]; if (!it) { if (_babel_runtime_corejs3_core_js_stable_array_is_array__WEBPACK_IMPORTED_MODULE_6__(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === \"number\") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\"Invalid attempt to iterate non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }\n\nfunction _unsupportedIterableToArray(o, minLen) { var _context3; if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = _babel_runtime_corejs3_core_js_stable_instance_slice__WEBPACK_IMPORTED_MODULE_2__(_context3 = Object.prototype.toString.call(o)).call(_context3, 8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return _babel_runtime_corejs3_core_js_stable_array_from__WEBPACK_IMPORTED_MODULE_3__(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_Strict_curry_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])( /*#__PURE__*/_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_0__.mark(function filterL(f, iter) {\n  var _iterator, _step, _loop;\n\n  return _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_0__.wrap(function filterL$(_context2) {\n    while (1) {\n      switch (_context2.prev = _context2.next) {\n        case 0:\n          _iterator = _createForOfIteratorHelper((0,_Strict_toIter_js__WEBPACK_IMPORTED_MODULE_8__[\"default\"])(iter));\n          _context2.prev = 1;\n          _loop = /*#__PURE__*/_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_0__.mark(function _loop() {\n            var a, b;\n            return _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_0__.wrap(function _loop$(_context) {\n              while (1) {\n                switch (_context.prev = _context.next) {\n                  case 0:\n                    a = _step.value;\n                    b = (0,_Strict_go1_js__WEBPACK_IMPORTED_MODULE_9__[\"default\"])(a, f);\n\n                    if (!(b instanceof _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_1__)) {\n                      _context.next = 7;\n                      break;\n                    }\n\n                    _context.next = 5;\n                    return b.then(function (b) {\n                      return b ? a : _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_1__.reject(_Strict_nop_js__WEBPACK_IMPORTED_MODULE_10__[\"default\"]);\n                    });\n\n                  case 5:\n                    _context.next = 10;\n                    break;\n\n                  case 7:\n                    if (!b) {\n                      _context.next = 10;\n                      break;\n                    }\n\n                    _context.next = 10;\n                    return a;\n\n                  case 10:\n                  case \"end\":\n                    return _context.stop();\n                }\n              }\n            }, _loop);\n          });\n\n          _iterator.s();\n\n        case 4:\n          if ((_step = _iterator.n()).done) {\n            _context2.next = 8;\n            break;\n          }\n\n          return _context2.delegateYield(_loop(), \"t0\", 6);\n\n        case 6:\n          _context2.next = 4;\n          break;\n\n        case 8:\n          _context2.next = 13;\n          break;\n\n        case 10:\n          _context2.prev = 10;\n          _context2.t1 = _context2[\"catch\"](1);\n\n          _iterator.e(_context2.t1);\n\n        case 13:\n          _context2.prev = 13;\n\n          _iterator.f();\n\n          return _context2.finish(13);\n\n        case 16:\n        case \"end\":\n          return _context2.stop();\n      }\n    }\n  }, filterL, null, [[1, 10, 13, 16]]);\n})));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Lazy/filterL.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Lazy/mapL.js":
+/*!********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Lazy/mapL.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_slice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/slice */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_array_from__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/array/from */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/symbol */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/get-iterator-method */ \"./node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_array_is_array__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/array/is-array */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js\");\n/* harmony import */ var _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs3/regenerator */ \"./node_modules/@babel/runtime-corejs3/regenerator/index.js\");\n/* harmony import */ var _Strict_curry_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Strict/curry.js */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n/* harmony import */ var _Strict_go1_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Strict/go1.js */ \"./node_modules/fxjs/mjs/Strict/go1.js\");\n/* harmony import */ var _Strict_toIter_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Strict/toIter.js */ \"./node_modules/fxjs/mjs/Strict/toIter.js\");\n\n\n\n\n\n\n\nfunction _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_2__ !== \"undefined\" && _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_3__(o) || o[\"@@iterator\"]; if (!it) { if (_babel_runtime_corejs3_core_js_stable_array_is_array__WEBPACK_IMPORTED_MODULE_4__(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === \"number\") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\"Invalid attempt to iterate non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }\n\nfunction _unsupportedIterableToArray(o, minLen) { var _context2; if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = _babel_runtime_corejs3_core_js_stable_instance_slice__WEBPACK_IMPORTED_MODULE_0__(_context2 = Object.prototype.toString.call(o)).call(_context2, 8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return _babel_runtime_corejs3_core_js_stable_array_from__WEBPACK_IMPORTED_MODULE_1__(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_Strict_curry_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])( /*#__PURE__*/_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5__.mark(function mapL(f, iter) {\n  var _iterator, _step, a;\n\n  return _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5__.wrap(function mapL$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          _iterator = _createForOfIteratorHelper((0,_Strict_toIter_js__WEBPACK_IMPORTED_MODULE_7__[\"default\"])(iter));\n          _context.prev = 1;\n\n          _iterator.s();\n\n        case 3:\n          if ((_step = _iterator.n()).done) {\n            _context.next = 9;\n            break;\n          }\n\n          a = _step.value;\n          _context.next = 7;\n          return (0,_Strict_go1_js__WEBPACK_IMPORTED_MODULE_8__[\"default\"])(a, f);\n\n        case 7:\n          _context.next = 3;\n          break;\n\n        case 9:\n          _context.next = 14;\n          break;\n\n        case 11:\n          _context.prev = 11;\n          _context.t0 = _context[\"catch\"](1);\n\n          _iterator.e(_context.t0);\n\n        case 14:\n          _context.prev = 14;\n\n          _iterator.f();\n\n          return _context.finish(14);\n\n        case 17:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, mapL, null, [[1, 11, 14, 17]]);\n})));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Lazy/mapL.js?");
+
+/***/ }),
+
 /***/ "./node_modules/fxjs/mjs/Strict/curry.js":
 /*!***********************************************!*\
   !*** ./node_modules/fxjs/mjs/Strict/curry.js ***!
@@ -3124,6 +3549,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ curry)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/concat */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js\");\n\nfunction curry(f) {\n  return function (a) {\n    var _context;\n\n    for (var _len = arguments.length, _ = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n      _[_key - 1] = arguments[_key];\n    }\n\n    return _.length ? f.apply(void 0, _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__(_context = [a]).call(_context, _)) : function () {\n      var _context2;\n\n      for (var _len2 = arguments.length, _ = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {\n        _[_key2] = arguments[_key2];\n      }\n\n      return f.apply(void 0, _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__(_context2 = [a]).call(_context2, _));\n    };\n  };\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/curry.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Strict/defaults.js":
+/*!**************************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/defaults.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ defaults)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/helpers/slicedToArray */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js\");\n/* harmony import */ var _internal_baseExtend_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_internal/baseExtend.js */ \"./node_modules/fxjs/mjs/_internal/baseExtend.js\");\n/* harmony import */ var _has_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./has.js */ \"./node_modules/fxjs/mjs/Strict/has.js\");\n\n\n\n\nvar setter = function setter(obj, _ref) {\n  var _ref2 = (0,_babel_runtime_corejs3_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_ref, 2),\n      k = _ref2[0],\n      v = _ref2[1];\n\n  return (0,_has_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(k, obj) || (obj[k] = v, obj), obj;\n};\n\nfunction defaults(obj) {\n  for (var _len = arguments.length, objs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n    objs[_key - 1] = arguments[_key];\n  }\n\n  return (0,_internal_baseExtend_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(setter, obj, objs);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/defaults.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Strict/each.js":
+/*!**********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/each.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _go1_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./go1.js */ \"./node_modules/fxjs/mjs/Strict/go1.js\");\n/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.js */ \"./node_modules/fxjs/mjs/Strict/map.js\");\n/* harmony import */ var _curry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./curry.js */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_curry_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function each(f, iter) {\n  return (0,_map_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(function (a) {\n    return (0,_go1_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(f(a), function (_) {\n      return a;\n    });\n  }, iter);\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/each.js?");
 
 /***/ }),
 
@@ -3149,6 +3596,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/fxjs/mjs/Strict/has.js":
+/*!*********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/has.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _curry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./curry.js */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_curry_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function has(k, obj) {\n  return !!(obj && obj.hasOwnProperty(k));\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/has.js?");
+
+/***/ }),
+
 /***/ "./node_modules/fxjs/mjs/Strict/head.js":
 /*!**********************************************!*\
   !*** ./node_modules/fxjs/mjs/Strict/head.js ***!
@@ -3157,6 +3615,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ head)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/helpers/slicedToArray */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js\");\n/* harmony import */ var _take_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./take.js */ \"./node_modules/fxjs/mjs/Strict/take.js\");\n/* harmony import */ var _go1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./go1.js */ \"./node_modules/fxjs/mjs/Strict/go1.js\");\n\n\n\nfunction head(iter) {\n  return (0,_go1_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_take_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(1, iter), function (_ref) {\n    var _ref2 = (0,_babel_runtime_corejs3_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_ref, 1),\n        h = _ref2[0];\n\n    return h;\n  });\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/head.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Strict/map.js":
+/*!*********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/map.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Lazy_mapL_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Lazy/mapL.js */ \"./node_modules/fxjs/mjs/Lazy/mapL.js\");\n/* harmony import */ var _curry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./curry.js */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n/* harmony import */ var _takeAll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./takeAll.js */ \"./node_modules/fxjs/mjs/Strict/takeAll.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_curry_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function map(f, iter) {\n  return (0,_takeAll_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_Lazy_mapL_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(f, iter));\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/map.js?");
 
 /***/ }),
 
@@ -3171,6 +3640,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/fxjs/mjs/Strict/pipe.js":
+/*!**********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/pipe.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ pipe)\n/* harmony export */ });\n/* harmony import */ var _reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reduce.js */ \"./node_modules/fxjs/mjs/Strict/reduce.js\");\n/* harmony import */ var _internal_go1Sync_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_internal/go1Sync.js */ \"./node_modules/fxjs/mjs/_internal/go1Sync.js\");\n\n\nfunction pipe(f) {\n  for (var _len = arguments.length, fs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n    fs[_key - 1] = arguments[_key];\n  }\n\n  return function () {\n    return (0,_reduce_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_internal_go1Sync_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], f.apply(void 0, arguments), fs);\n  };\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/pipe.js?");
+
+/***/ }),
+
 /***/ "./node_modules/fxjs/mjs/Strict/reduce.js":
 /*!************************************************!*\
   !*** ./node_modules/fxjs/mjs/Strict/reduce.js ***!
@@ -3179,6 +3659,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ reduce)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/concat */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/promise */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js\");\n/* harmony import */ var _toIter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./toIter.js */ \"./node_modules/fxjs/mjs/Strict/toIter.js\");\n/* harmony import */ var _go1_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./go1.js */ \"./node_modules/fxjs/mjs/Strict/go1.js\");\n/* harmony import */ var _internal_go2_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_internal/go2.js */ \"./node_modules/fxjs/mjs/_internal/go2.js\");\n/* harmony import */ var _head_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./head.js */ \"./node_modules/fxjs/mjs/Strict/head.js\");\n\n\n\n\n\n\nfunction reduce(f, acc, iter) {\n  if (arguments.length == 1) return function () {\n    var _context;\n\n    for (var _len = arguments.length, _ = new Array(_len), _key = 0; _key < _len; _key++) {\n      _[_key] = arguments[_key];\n    }\n\n    return reduce.apply(void 0, _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__(_context = [f]).call(_context, _));\n  };\n  if (arguments.length == 2) return reduce(f, (0,_head_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(iter = (0,_toIter_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(acc)), iter);\n  iter = (0,_toIter_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(iter);\n  return (0,_go1_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(acc, function recur(acc) {\n    var cur;\n\n    while (!(cur = iter.next()).done) {\n      acc = (0,_internal_go2_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(acc, cur.value, f);\n      if (acc instanceof _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_1__) return acc.then(recur);\n    }\n\n    return acc;\n  });\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/reduce.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Strict/strMap.js":
+/*!************************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/strMap.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Lazy_mapL_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Lazy/mapL.js */ \"./node_modules/fxjs/mjs/Lazy/mapL.js\");\n/* harmony import */ var _string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./string.js */ \"./node_modules/fxjs/mjs/Strict/string.js\");\n/* harmony import */ var _curry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./curry.js */ \"./node_modules/fxjs/mjs/Strict/curry.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_curry_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(function strMap(f, iter) {\n  return (0,_string_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_Lazy_mapL_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(f, iter));\n}));\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/strMap.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Strict/string.js":
+/*!************************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/string.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ string)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/concat */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js\");\n/* harmony import */ var _reduce_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reduce.js */ \"./node_modules/fxjs/mjs/Strict/reduce.js\");\n\n\nfunction string(iter) {\n  return (0,_reduce_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(function (a, b) {\n    var _context;\n\n    return _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__(_context = \"\".concat(a)).call(_context, b);\n  }, \"\", iter);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/string.js?");
 
 /***/ }),
 
@@ -3193,6 +3695,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/fxjs/mjs/Strict/takeAll.js":
+/*!*************************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/takeAll.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ takeAll)\n/* harmony export */ });\n/* harmony import */ var _take_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./take.js */ \"./node_modules/fxjs/mjs/Strict/take.js\");\n\nfunction takeAll(iter) {\n  return (0,_take_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(Infinity, iter);\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/takeAll.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/Strict/tap.js":
+/*!*********************************************!*\
+  !*** ./node_modules/fxjs/mjs/Strict/tap.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ tap)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/concat */ \"./node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js\");\n/* harmony import */ var _reduce_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reduce.js */ \"./node_modules/fxjs/mjs/Strict/reduce.js\");\n/* harmony import */ var _internal_go1Sync_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_internal/go1Sync.js */ \"./node_modules/fxjs/mjs/_internal/go1Sync.js\");\n/* harmony import */ var _go1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./go1.js */ \"./node_modules/fxjs/mjs/Strict/go1.js\");\n\n\n\n\nfunction tap(f) {\n  for (var _len = arguments.length, fs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n    fs[_key - 1] = arguments[_key];\n  }\n\n  return function (a) {\n    var _context;\n\n    for (var _len2 = arguments.length, as = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {\n      as[_key2 - 1] = arguments[_key2];\n    }\n\n    return (0,_go1_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_reduce_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_internal_go1Sync_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"], f.apply(void 0, _babel_runtime_corejs3_core_js_stable_instance_concat__WEBPACK_IMPORTED_MODULE_0__(_context = [a]).call(_context, as)), fs), function (_) {\n      return a;\n    });\n  };\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/tap.js?");
+
+/***/ }),
+
 /***/ "./node_modules/fxjs/mjs/Strict/toIter.js":
 /*!************************************************!*\
   !*** ./node_modules/fxjs/mjs/Strict/toIter.js ***!
@@ -3201,6 +3725,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ toIter)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/get-iterator-method */ \"./node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js\");\n/* harmony import */ var _babel_runtime_corejs3_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js/get-iterator */ \"./node_modules/@babel/runtime-corejs3/core-js/get-iterator.js\");\n/* harmony import */ var _Lazy_emptyL_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Lazy/emptyL.js */ \"./node_modules/fxjs/mjs/Lazy/emptyL.js\");\n\n\n\nfunction toIter(iterable) {\n  return iterable && _babel_runtime_corejs3_core_js_get_iterator_method__WEBPACK_IMPORTED_MODULE_0__(iterable) ? _babel_runtime_corejs3_core_js_get_iterator__WEBPACK_IMPORTED_MODULE_1__(iterable) : (0,_Lazy_emptyL_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/Strict/toIter.js?");
+
+/***/ }),
+
+/***/ "./node_modules/fxjs/mjs/_internal/baseExtend.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/fxjs/mjs/_internal/baseExtend.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ baseExtend)\n/* harmony export */ });\n/* harmony import */ var _babel_runtime_corejs3_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/helpers/typeof */ \"./node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js\");\n/* harmony import */ var _Strict_reduce_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Strict/reduce.js */ \"./node_modules/fxjs/mjs/Strict/reduce.js\");\n/* harmony import */ var _Lazy_mapL_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Lazy/mapL.js */ \"./node_modules/fxjs/mjs/Lazy/mapL.js\");\n/* harmony import */ var _Lazy_entriesL_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Lazy/entriesL.js */ \"./node_modules/fxjs/mjs/Lazy/entriesL.js\");\n\n\n\n\nfunction baseExtend(set, obj, objs) {\n  var type = (0,_babel_runtime_corejs3_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(obj);\n\n  obj && (type == \"object\" || type == \"function\") && (0,_Strict_reduce_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])((0,_Strict_reduce_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(set), obj, (0,_Lazy_mapL_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_Lazy_entriesL_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"], objs));\n  return obj;\n}\n\n//# sourceURL=webpack://express-setup-by-generator/./node_modules/fxjs/mjs/_internal/baseExtend.js?");
 
 /***/ }),
 
@@ -3233,7 +3768,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n// import { $delegate, $qs } from 'fxdom';\n\n\n// export const handleClick =\n\nconsole.log(fxjs__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n\n// front에서 실행시킬 코드를 작성 (이벤트 달기)\n\n\n//# sourceURL=webpack://express-setup-by-generator/./public/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/go.js\");\n/* harmony import */ var fxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! fxjs */ \"./node_modules/fxjs/mjs/Strict/tap.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/el.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/appendTo.js\");\n/* harmony import */ var fxdom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! fxdom */ \"./node_modules/fxdom/qs.js\");\n/* harmony import */ var _modules_main_S_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/main/S/index.js */ \"./modules/main/S/index.js\");\n/* harmony import */ var _modules_main_F_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/main/F/index.js */ \"./modules/main/F/index.js\");\n\n\n\n\n\n(0,fxjs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _modules_main_S_index_js__WEBPACK_IMPORTED_MODULE_0__.tmpl,\n  fxdom__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  (0,fxjs__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(_modules_main_F_index_js__WEBPACK_IMPORTED_MODULE_1__.events),\n  (0,fxdom__WEBPACK_IMPORTED_MODULE_5__[\"default\"])((0,fxdom__WEBPACK_IMPORTED_MODULE_6__[\"default\"])('body'))\n);\n\n\n//# sourceURL=webpack://express-setup-by-generator/./public/index.js?");
 
 /***/ })
 

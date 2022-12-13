@@ -1,9 +1,19 @@
-// import { $qs } from 'fxdom/es';
+import { pipe, go, each } from 'fxjs';
+import { $delegate, $closest, $children, $toggleClass } from 'fxdom';
 
-// const body = $qs('body');
-// console.log('body');
-
-
-// dom 다루는거
-
-// evnet
+export const events = pipe(
+  $delegate('click', '.button--edit', ({ currentTarget }) => {
+    go(
+      currentTarget,
+      $closest('.todo-list__item'),
+      $children,
+      each($toggleClass('hidden'))
+    );
+  }),
+  $delegate('click', '.button--save', () => {
+    console.log('save clicked!');
+  }),
+  $delegate('keyup', '.input--todo', (e) => {
+    if (e.key === 'Enter') console.log('todo enter~!');
+  }),
+);
