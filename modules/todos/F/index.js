@@ -1,4 +1,4 @@
-import { pipe, go, each } from 'fxjs';
+import { pipe, go, tap, each } from 'fxjs';
 import { $delegate, $closest, $children, $toggleClass } from 'fxdom';
 
 export const events = pipe(
@@ -10,8 +10,8 @@ export const events = pipe(
       each($toggleClass('hidden'))
     );
   }),
-  $delegate('click', '.button--save', () => {
-    console.log('save clicked!');
+  $delegate('click', '.button--save', (e) => {
+    console.log('save clicked!', e);
   }),
   $delegate('keyup', '.input--todo', (e) => {
     if (e.key === 'Enter') console.log('todo enter~!');

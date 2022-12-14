@@ -5,11 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles.css" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="/styles.css" >
 </head>
 <body>
-  <%- tmpl %>
-  <script type="module" src="/main.js"></script>
+  <nav>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </nav>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+  <main>
+  <% if(tmpl) { %>
+    <%- tmpl %>
+  <% } %>
+  </main>
+  <script src="/main.js"></script>
 </body>
 </html>
