@@ -15,8 +15,8 @@ export default {
   module: {
     rules: [{
     }, {
-      test: /\.css$/,
-      use: [MiniCssExtractPlugin.loader, 'css-loader']
+      test: /\.(styl|css)$/,
+      use: [MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader']
     }],
   },
   plugins: [
